@@ -1,0 +1,181 @@
+.container-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-form {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem 2rem 2rem;
+    border: 0.2rem solid #279864;
+    border-radius: 1rem;
+    background: rgb(255,255,255, 0.5);
+    margin: 3rem 0 4rem 0;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #279864;
+    margin-left: 0.5rem;
+}
+
+.container-form .card-form ul {
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-form .card-form li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start
+}
+
+.form-input li {
+    padding: 0 1rem 0 1rem;
+
+}
+
+.form-media {
+    padding: 0 1rem 0 1rem;
+}
+
+.form-button {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+textarea {
+    width: 20rem;
+    height: 7rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #279864;
+    padding: 0.5rem;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+input#file-upload-button {
+    width: 7rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 1rem 7.5rem 1rem 7.5rem;
+    background-color: #279864;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input#nama,
+input#alamat,
+input#jenis {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #279864;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+button {
+    width: auto;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    padding: 0 2rem 0 2rem;
+    margin: 2rem 0 1rem 0;
+    background-color: #279864;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.active, button:hover {
+    
+    background-color: #CDF2D0;
+    transition: all 0.5s ease;
+}
+
+.add {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    margin: 3rem;
+    width: auto;
+    height: 3rem;
+    background: #279864;
+    border-radius: 3rem;
+    padding: 0.4rem 2.5rem 0 2.5rem;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.add a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.add.active, .add:hover {
+    background-color: #289d32;
+    transition: all 0.5s ease;
+}
+
+/* Gaya label */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Gaya dropdown */
+select#jenis {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #279864;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Gaya opsi dropdown */
+option {
+    font-size: 1rem;
+}
+
+/* Menghilangkan default border pada Firefox */
+select:focus {
+    outline: none;
+    border-color: #6ac4f7;
+}
+
+
+@media (max-width: 800px) {
+    .search-results .line { 
+        margin-top: 2.5rem;
+    }
+}

@@ -1,0 +1,88 @@
+.container-profil {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-profil {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 10rem 0;
+    padding: 2rem 0 3rem 0;
+    border: 0.2rem solid #279864;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: rgb(255, 255, 255, 0.5);
+
+}
+
+.foto-profil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 2rem 2rem 2rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #279864;
+    margin-left: 0.5rem;
+}
+
+.container-profil .card-profil ul {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.container-profil .card-profil li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+input {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #279864;
+    padding-left: 1rem;
+    background: #f1f1f1;
+}
+
+button {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 1rem 7.5rem 1rem 7.5rem;
+    background-color: #279864;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.active, button:hover {
+    
+    background-color: #CDF2D0;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 700px) {
+    .card-profil { 
+        flex-direction: column;
+    }
+    .container-profil .card-profil ul {
+        list-style: none;
+        margin-right: 0;
+        padding: 0 1rem 0 1rem;
+    }
+}

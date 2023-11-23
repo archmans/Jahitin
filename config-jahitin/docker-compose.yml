@@ -1,0 +1,143 @@
+version: '3.9'
+
+services:
+  php-jahitin:
+    restart: always
+    container_name: php-app
+    build:
+      context: ../php-jahitin
+      dockerfile: Dockerfile
+    ports:
+      - "8083:80"
+    volumes:
+      - ../php-jahitin:/var/www/html
+    environment:
+      UPLOAD_LIMIT: 10M
+    depends_on:
+      - php-jahitin-db
+    networks:
+      - jahitin-network
+
+  php-jahitin-db:
+    restart: always
+    container_name: php-jahitin-db
+    image: mysql:latest
+    ports:
+      - "3304:3306"
+    volumes:
+      - ../php-jahitin/src/databases:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php_jahitin
+      MYSQL_USER: user
+      MYSQL_PASSWORD: jahitin
+    networks:
+      - jahitin-network
+    
+  php-db-gui:
+    container_name: php-db-gui
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: php-jahitin-db
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - jahitin-network
+
+  rest:
+    restart: always
+    container_name: rest-app
+    build:
+      context: ../rest-jahitin
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - rest-jahitin-db
+    networks:
+      - jahitin-network
+
+  rest-jahitin-db:
+    restart: always
+    container_name: rest-jahitin-db
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    volumes:
+      - ../rest-jahitin/database:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rest_jahitin
+      MYSQL_USER: user
+      MYSQL_PASSWORD: jahitin
+    networks:
+      - jahitin-network
+
+  rest-db-gui:
+    container_name: rest-db-gui
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: rest-jahitin-db
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - jahitin-network
+
+  soap:
+    restart: always
+    container_name: soap-app
+    build:
+      context: ../soap-jahitin/soap-service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    depends_on:
+      - soap-jahitin-db
+    networks:
+      - jahitin-network
+
+  soap-jahitin-db:
+    restart: always
+    container_name: soap-jahitin-db
+    image: mysql:latest
+    ports:
+      - "3305:3306"
+    volumes:
+      - ../soap-jahitin/soap-service/db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: soap_jahitin
+      MYSQL_USER: user
+      MYSQL_PASSWORD: jahitin
+    networks:
+      - jahitin-network
+
+  soap-db-gui:
+    container_name: soap-db-gui
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: soap-jahitin-db
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - jahitin-network
+
+  spa:
+    restart: always
+    container_name: spa-app
+    build:
+      context: ../spa-jahitin
+      dockerfile: Dockerfile
+    ports:
+      - "3000:5173"
+    depends_on:
+      - rest
+    networks:
+      - jahitin-network
+
+networks:
+  jahitin-network:
+    driver: bridge

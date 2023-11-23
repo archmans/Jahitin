@@ -1,0 +1,377 @@
+.search-results-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 0 5rem 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tailor-list {
+    list-style: none;
+    margin-bottom: 3rem;
+    width: fit-content;
+}
+
+.tailor-item {
+    display: flex;
+    /* border: 0.2rem solid #000; */
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tailor-card {
+    display: flex;
+    border: 0.3rem solid #279864;
+    border-radius: 1rem;
+    background: rgb(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* .tailor-counter {
+    border: 0.3rem solid #279864;
+    border-radius: 1rem 0 0 1rem;
+    background: rgb(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #279864;
+    font-weight: bold;
+    padding: 0 2rem 0 2rem;
+    margin-right: 1rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+} */
+
+.tailor-media {
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    height: 400px;
+    background: rgb(203, 198, 198, 0.5);
+
+}
+
+img.tailor-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+
+}
+
+.tailor-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem 2rem;
+    width: 30rem;
+}
+
+h1.tailor-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+p.tailor-address, 
+p.tailor-category {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 1rem 0rem 0;
+}
+
+/* .tailor-actions a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+
+} */
+
+a.button {
+    font-size: 1rem;
+    color: #279864;
+    text-decoration: underline;
+    cursor: pointer;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 0.5rem;
+}
+
+.button.active .button:hover {
+    color: #279864;
+    transition: all 0.5s ease; 
+}
+
+.pagination ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(203, 198, 198, 0.5);
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.pagination .active a {
+    color: #000;
+}
+
+.pagination .active {
+    background-color: #279864;
+    color: #fff;
+}
+
+.pagination li:hover {
+    background-color: rgb(39, 152, 100, 0.5);
+    transform: scale(1.1);
+}
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999999;
+    display: flex;
+
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    overflow: auto;
+}
+
+.container-popUp {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center
+}
+  
+.popup {
+    background: transparent;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+  }
+  
+.popup h1 {
+    margin: 2rem 0 2rem 0;
+    color: #f1f1f1;
+    font-weight: 600;
+}
+
+.close {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    flex-direction: row-reverse;
+
+
+  }
+
+.x {
+    transition: all 200ms;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #279864;
+    margin: 1rem 2rem 0 0;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 100%;
+    overflow: auto;
+    padding-bottom: 7rem;
+}
+
+.tailor-actions {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.tailor-actions .update, 
+.tailor-actions .review{
+    color: #279864;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 1rem 1rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tailor-actions .delete{
+    color: #820404;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 1rem 1rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* hover */
+.tailor-actions .update:hover,
+.tailor-actions .delete:hover,
+.tailor-actions .review:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease; 
+}
+
+.logo {
+    padding-left: 3rem;
+}
+
+.button-premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.button-subscribe,
+.button-see-gallery {
+    background-color: #279864;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-pending {
+    background-color: #FFB34F;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.button-subscribe:hover,
+.button-see-gallery:hover {
+    background-color: #1E7E5D;
+}
+.button-pending:hover {
+    background-color: #E6A03A;
+}
+
+@media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+@media (max-width: 1324px) {
+    .search {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-input {
+        width: 90%;
+        margin: 0 0rem 1rem 0rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .tailor-item {
+        flex-direction: column-reverse;
+        align-items: center;
+        display: flex;
+    }
+
+    .tailor-card {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        padding: 1rem;
+    }
+
+    .tailor-media {
+        display: flex;
+        justify-content: center
+    }
+
+    .tailor-media,
+    .tailor-info,
+    .tailor-actions {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    p.tailor-address, 
+    p.tailor-category {
+        padding: 0;
+    }
+
+    .btn {
+        width: 4rem;
+        height: 2rem;
+        margin: 0 0.5rem;
+        font-size: 10px;
+    }
+
+    .button-premium {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .tailor-card {
+        width: 320px;
+    }
+
+    .tailor-media {
+        display: flex;
+        justify-content: center
+    }
+
+    .tailor-actions .update, 
+    .tailor-actions .review,
+    .tailor-actions .delete{
+        font-size: 1.2rem;
+    }
+
+}

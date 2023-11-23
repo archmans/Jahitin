@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('../assets/background.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* .bangs {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(39, 152, 100, 1);
+    height: 60px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+} */
+
+.bangs .title {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3));
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.logo img{
+    margin: 2rem 0 0 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.nav-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-right ul {
+    display: flex;
+    list-style: none;
+    padding-right: 3rem;
+}
+
+.nav-right ul li {
+    padding: 0 1rem 0 1rem;
+}
+
+nav ul li a {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.nav-left {
+    width: 100%;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-left-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow-left-button:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.nav-left a {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-left a.active, .nav-left a:hover {
+    color: #279864;
+    transition: all 0.5s ease; 
+}
+
+nav ul il a.active, nav ul li a:hover {
+    color: #279864;
+    transition: all 0.5s ease; 
+}
+
+.container-title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.title {
+    width: auto;
+    color: #000;
+    font-size: 2rem;
+    font-weight: Bold;
+    white-space: nowrap;
+}
+
+.line-left {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #279864;
+    margin-right: 2rem;
+    height: 1rem;
+}
+
+.line-right {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #279864;
+    margin-left: 2rem;
+    height: 1rem;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.search-input {
+    width: 38rem;
+    height: 3.125rem;
+    border-radius: 1.875rem;
+    border: 1px solid #5C5C5C;
+    background: #F0F0F0;
+    margin: 0 2rem 0rem 0rem;
+    padding: 0rem 1.7rem;
+    font-size: 1.25rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border: #279864 0.2rem solid;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.sort-filter .sort-option,
+.sort-filter .filter-option {
+    border-radius: 1.875rem;
+    border: 1px solid #5C5C5C;
+    background: #F0F0F0;
+    width: 8rem;
+    height: 2rem;
+    padding: 0rem 1.7rem;
+    font-size: 1.25rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: 0.6s all;
+
+}
+
+.sort-filter .sort-option:hover,
+.sort-filter .filter-option:hover {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    border: 0.2rem solid #279864;
+}
+
+
+.sort-filter .sort-option option:hover,
+.sort-filter .filter-option option:hover {
+    background-color: #279864;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.btn {
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #279864;
+    color: #000;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.6s all;
+    width: 5rem;
+    height: 2rem;
+    margin: 0 0.5rem;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: #CDF2D0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.add {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    margin: 3rem;
+    width: auto;
+    height: 3rem;
+    background: #279864;
+    border-radius: 3rem;
+    padding: 0.4rem 2.5rem 0 2.5rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.add a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.add.active, .add:hover {
+    background-color: #289d32;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 1240px) {
+    .search {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-input {
+        margin: 0 0 1rem 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-right {
+        width: auto;
+        justify-content: center;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    .nav-left {
+        position: absolute;
+    }
+    
+    .logo {
+        padding-left: 0;
+        margin-right: 4rem;
+
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-left{
+        display: none;
+    }
+
+    .search-input {
+        width: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sort-filter .search-option {
+        margin: 0 0 1rem 0;
+    }
+    .logo img {
+        width: 70%;
+    }
+    .logo {
+        display: flex;
+        justify-content: center
+    }
+    .search-input {
+        width: 90%;
+        height: 2.5rem;
+    }
+    .nav-right ul {
+        padding-right: 0;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .sort-filter .sort-option {
+        margin-bottom: 1rem;;
+    }
+    .add {
+        margin: 2rem;
+        padding: 0.5rem 1rem 0 1rem;
+    }
+    .add a {
+        font-size: 1.2rem;
+    }
+}
