@@ -42,8 +42,18 @@ const SubsManagePage: React.FC = () => {
     };
 
     const handleReject = (id: string) => {
-        // Handle reject logic here
-        console.log(`Reject request with ID: ${id}`);
+        console.log(id);
+        try {
+            axios.patch(`http://localhost:4000/subscription/rej/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            });
+            console.log(`Reject request FE with ID: ${id}`);
+            fetchSubscriptionData();
+        } catch (error) {
+            console.error('Error rejecting subscription: ', error);
+        }
     };
 
     return (
