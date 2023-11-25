@@ -15,7 +15,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* .bangs {
+.bangs {
     position: fixed;
     top: 0;
     width: 100%;
@@ -23,7 +23,7 @@ body {
     height: 60px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     z-index: 1;
-} */
+}
 
 .bangs .title {
     color: #000;
